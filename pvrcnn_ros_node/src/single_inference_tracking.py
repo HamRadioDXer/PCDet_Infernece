@@ -286,26 +286,5 @@ if __name__ == "__main__":
     # 11~13FPS
     config_path = "/home/cds-josh/OpenPCDet_ws/src/pvrcnn_ros_node/cfgs/nuscenes_models/cbgs_second_multihead.yaml"  
     model_path = "/home/cds-josh/OpenPCDet_ws/src/pvrcnn_ros_node/models/cbgs_second_multihead_nds6229_updated.pth"  
-    ## PVRCNN  7~9FPS
-    # config_path = '/home/cds-josh/OpenPCDet_ws/src/pvrcnn_ros_node/cfgs/kitti_models/pv_rcnn.yaml'
-    # model_path = '/home/cds-josh/OpenPCDet_ws/src/pvrcnn_ros_node/models/pv_rcnn_8369.pth'
-    ## PointRCNN
-    # config_path = '/home/cds-josh/OpenPCDet_ws/src/pvrcnn_ros_node/cfgs/kitti_models/pointrcnn.yaml'
-    # model_path = '/home/cds-josh/OpenPCDet_ws/src/pvrcnn_ros_node/models/pointrcnn_7870.pth'
-    ## PartA2_free
-    # config_path = '/home/cds-josh/OpenPCDet_ws/src/pvrcnn_ros_node/cfgs/kitti_models/PartA2_free.yaml'
-    # model_path = '/home/cds-josh/OpenPCDet_ws/src/pvrcnn_ros_node/models/PartA2_free_7872.pth'
-    ## PointPillar
-    # config_path = '/home/cds-josh/OpenPCDet_ws/src/pvrcnn_ros_node/cfgs/kitti_models/pointpillar.yaml'
-    # model_path = '/home/cds-josh/OpenPCDet_ws/src/pvrcnn_ros_node/models/pointpillar_7728.pth'
-    ## SECOND
-    # config_path = '/home/cds-josh/OpenPCDet_ws/src/pvrcnn_ros_node/cfgs/kitti_models/second.yaml'
-    # model_path = '/home/cds-josh/OpenPCDet_ws/src/pvrcnn_ros_node/models/second_7862.pth'
-    ## SECOND_MultiHead (trained on nuscenes dataset)  11~13FPS
-    # config_path = '/home/cds-josh/OpenPCDet_ws/src/pvrcnn_ros_node/cfgs/nuscenes_models/cbgs_second_multihead.yaml'
-    # model_path = '/home/cds-josh/OpenPCDet_ws/src/pvrcnn_ros_node/models/cbgs_second_multihead_nds6229.pth'
-    ## PP_MutliHead (trained on nuscenes dataset)
-    # config_path = '/home/cds-josh/OpenPCDet_ws/src/pvrcnn_ros_node/cfgs/nuscenes_models/cbgs_pp_multihead.yaml'
-    # model_path = '/home/cds-josh/OpenPCDet_ws/src/pvrcnn_ros_node/models/pp_multihead_nds5823.pth'
-    
+
     main()
