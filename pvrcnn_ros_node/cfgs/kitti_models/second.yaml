@@ -1,7 +1,7 @@
 CLASS_NAMES: ['Car', 'Pedestrian', 'Cyclist']
 
 DATA_CONFIG: 
-    _BASE_CONFIG_: /home/cds-josh/OpenPCDet_ws/src/pvrcnn_ros_node/cfgs/dataset_configs/kitti_dataset.yaml
+    _BASE_CONFIG_: /home/ddh/catkin_ws_fixed/src/PCDet_Infernece/pvrcnn_ros_node/cfgs/dataset_configs/kitti_dataset.yaml
 
 
 MODEL:

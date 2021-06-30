@@ -1,1 +1,15 @@
 # PCDet_Infernece
+This node is primarily used for lidar-based target detection, and this framework is encapsulated on ross based on OpenPCDet. OpenPCDet is installed with reference to its INSTALL.md: refer to OpenPCDet in the home directory
+
+Terminal input git clone --recursive https://github.com/open-mmlab/OpenPCDet.git
+Pip3 install -r requirements .txt, here note its internal requirements of the torch version, need to correspond to the native cuda type, directly through pip3 torch may not match cuda, therefore, it is recommended to install the corresponding version of cuda torch, and requirements .txt the torch version requirements removed, and then installed.
+At the same time, compile the spconv package as required, refer to the following version of this link requirements: cmake > s 3.13.2 git clone -recursive https://github.com/traveller59/spconv if torch > s 1.0, enter python setup.py bdist_wheel cd./dist, and pip XXX.whl for installation
+Sudo python3 setup.py develop installation OpenPCDet Note: During compilation process may encounter llvm, llvmlite and numba installation problems, installation numba requires llvm > 9.0, if the environment llvm does not meet the requirements, directly download the compiled llvm ubuntu library, the command line adds LLVM_CONFIG s installation path, and pip3 install llvmlite s0.36.0 pip3 install numba misstatement tbb, version is too low, GitHub installed the latest version, compiled through, installation successfully.
+Directory grooming: The main folder under this folder is lidar_objects_msgs, which is primarily a custom detection target message, pvrcnn_ros_node is node-dependent, The src folder in its directory contains detect.py files, which are detected by kitti continuous frames, including visualization in rviz, and the current lidar target detection is only based on the kitti dataset and has not yet been detected in real time in real time, for which this section needs to be updated later to change the way data is read into the detect.py file. The process is as follows:
+
+Start Lidar Node: roslaunch hesai_lidar hesai_lidar.launch lidar_type: "Pandar64" frame_id: "Pandar64"
+Open the new terminal and enter the python3 detect.py (note python3)
+Rosrun rviz rviz, visualized by adding detection results to the topic
+Note: The kitti dataset is published in /home/ddh/ddh/data/kitti_visual/scripts in the python kitti.py, data set in this path: /home/ddh/ddh/data/kitti/kitti2bag/2011_09_26
+
+detect.py file interpretation: This program obtains point cloud data by subscribing to topic kitti_point_cloud (the title of the published topic in the note above) (later access to the actual point cloud data, by changing its corresponding topic name), and publishes a topic called the subject matter detection box, which is in the form of a custom message lidar_objects_msgs, Contains an N-message type, Object detection box, which is defined in the same lidar_objects_msgs, and publishes topics id_boxes for display and visualization in rviz.
